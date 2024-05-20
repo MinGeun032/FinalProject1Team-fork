@@ -4569,3 +4569,12 @@ END
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-05-20 14:26:58.029
 !MESSAGE Started org.springframework.tooling.boot.ls LS process 16832
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-05-20 14:49:48.744
+!MESSAGE Classpath changed for project: AnimalApp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-05-20 14:52:00.502
+!MESSAGE Classpath changed for project: AnimalApp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-05-20 14:58:30.062
+!MESSAGE Classpath changed for project: AnimalApp
