@@ -1,0 +1,14 @@
+package com.sds.movieapp.model.recoommend;
+
+import org.apache.mahout.cf.taste.impl.model.GenericDataModel;
+import org.apache.mahout.cf.taste.model.DataModel;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class CustomModel {
+	private DataModel dataModel;
+	public CustomModel() {
+		dataModel = new GenericDataModel(null);
+	}
+}

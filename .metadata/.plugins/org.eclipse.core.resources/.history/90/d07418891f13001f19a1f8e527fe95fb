@@ -1,0 +1,63 @@
+spring.application.name=ConfigServer
+
+
+#외부의 서비스(MSA를 이루고 있는 각각의 프로젝트 어플리케이셔) 들에게 정보를 제공해주기 위한 서버의 설정 정보
+server.port=9000
+cloud.config.server.git.uri=git@github.com:hg316/msa-config.git
+
+#ssh-settiong 을 낙타기법으로...
+spring.cloud.config.server.git.ignoreLocalSshSettings=true
+   
+#깃헙으로부터 가져온 암호화된 데이터를 우리가 보유한 개인키로 풀어야 하므로, 
+#개인키 추가한다 
+spring.cloud.config.server.git.private-key=-----BEGIN RSA PRIVATE KEY-----\n\
+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\n\
+-----END RSA PRIVATE KEY-----\n\
