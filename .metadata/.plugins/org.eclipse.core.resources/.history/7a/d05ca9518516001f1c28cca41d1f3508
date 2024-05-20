@@ -1,0 +1,34 @@
+<th:block th:fragment="header">    
+    <div class="container">
+
+          <div class="offcanvas-body justify-content-center">
+            <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="shop.html" class="nav-link">보호소 조회</a>
+              </li>
+              <li class="nav-item">
+                <a href="blog.html" class="nav-link">동물조회</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">봉사게시판</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">마이페이지</a>
+              </li>	
+            </ul>
+
+
+
+          </div>
+
+        </div>
+
+      </nav>
+
+
+
+    </div>
+</th:block>   

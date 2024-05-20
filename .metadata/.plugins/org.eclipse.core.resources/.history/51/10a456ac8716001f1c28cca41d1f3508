@@ -19,9 +19,6 @@
               <a href="contact.html" class="nav-link">봉사게시판</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">로그인</a>
-            </li>
-            <li class="nav-item">
               <a href="contact.html" class="nav-link">마이페이지</a>
             </li>
           </ul>

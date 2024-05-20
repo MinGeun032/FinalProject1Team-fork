@@ -1,14 +1,18 @@
 <th:block th:fragment="header">
   <div class="container">
     <nav class="main-menu d-flex navbar navbar-expand-lg ">
+
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+ 
+
         <div class="offcanvas-body justify-content-center">
           <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-5 mb-0">
-            <div class="main-logo">
-              <a href="index.html">
-                <img src="/site/images/logo.png" alt="logo" class="img-fluid">
-              </a>
-            </div>
+          	<div class="main-logo">
+            <a href="index.html">
+              <img src="/site/images/logo.png" alt="logo" class="img-fluid">
+            </a>
+          </div>
             <li class="nav-item">
               <a href="shop.html" class="nav-link">보호소 조회</a>
             </li>
@@ -19,14 +23,19 @@
               <a href="contact.html" class="nav-link">봉사게시판</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">로그인</a>
-            </li>
-            <li class="nav-item">
               <a href="contact.html" class="nav-link">마이페이지</a>
             </li>
           </ul>
+
+
+
         </div>
+
       </div>
+
     </nav>
+
+
+
   </div>
 </th:block>
