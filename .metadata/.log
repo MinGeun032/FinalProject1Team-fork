@@ -4578,3 +4578,12 @@ END
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2024-05-20 14:58:30.062
 !MESSAGE Classpath changed for project: AnimalApp
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-05-20 15:14:07.670
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/iloveeclipse/plugins/latest/artifacts.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-05-20 15:14:08.565
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/iloveeclipse/plugins/latest/content.xml
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-05-20 15:20:24.106
+!MESSAGE Classpath changed for project: AnimalApp
