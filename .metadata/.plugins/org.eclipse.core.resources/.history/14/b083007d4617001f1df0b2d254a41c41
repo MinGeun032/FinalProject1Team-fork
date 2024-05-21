@@ -1,0 +1,5 @@
+package com.sds.animalapp.model.volunteer;
+
+public class VolunteerServiceImpl {
+
+}

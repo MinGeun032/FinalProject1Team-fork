@@ -59,14 +59,23 @@
           </div>
         </div>
       </div>
-
-
       <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
-
-
     </form>
   </div>
-
 </body>
-
 </html>
+<script type="text/javascript">
+	function regist(){
+		$("#form1").attr({
+			action:"/volunteer/regist",
+			method:"post"
+		});
+		$("#form1").submit();
+	}
+	
+	$(function(){
+		$("#bt_regist").click(function(){
+			regist();			
+		});		
+	});
+</script>
