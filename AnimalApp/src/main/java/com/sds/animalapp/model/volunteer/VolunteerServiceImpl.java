@@ -3,10 +3,15 @@ package com.sds.animalapp.model.volunteer;
 import java.util.List;
 import java.util.Map;
 
-import com.sds.animalapp.domain.Volunteer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.sds.animalapp.domain.VolunteerNotice;
+
+@Service
 public class VolunteerServiceImpl implements VolunteerService {
 	
+	@Autowired
 	VolunteerDAO volunteerDAO;
 
 	@Override
@@ -22,24 +27,24 @@ public class VolunteerServiceImpl implements VolunteerService {
 	}
 
 	@Override
-	public Volunteer select(Volunteer volunteer) {
+	public VolunteerNotice select(VolunteerNotice volunteerNotice) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	//글 등록
-	public void insert(Volunteer volunteer) {
-		volunteerDAO.insert(volunteer);
+	public void insert(VolunteerNotice volunteerNotice) {
+		volunteerDAO.insert(volunteerNotice);
 	}
 
 	@Override
-	public void update(Volunteer volunteer) {
+	public void update(VolunteerNotice volunteerNotice) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(Volunteer volunteer) {
+	public void delete(VolunteerNotice volunteerNotice) {
 		// TODO Auto-generated method stub
 		
 	}

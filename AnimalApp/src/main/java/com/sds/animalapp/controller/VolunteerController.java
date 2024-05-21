@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.sds.animalapp.domain.Volunteer;
+import com.sds.animalapp.domain.VolunteerNotice;
 import com.sds.animalapp.model.volunteer.VolunteerService;
 
 @Controller
@@ -23,9 +23,9 @@ public class VolunteerController {
     	return "volunteer/regist";
     }
     @PostMapping("/volunteer/regist")
-	public String regist(Volunteer volunteer) {
+	public String regist(VolunteerNotice volunteer) {
     	volunteerService.insert(volunteer); //3단계: 글 등록
 		
-		return "redirect:volunteer/list";
+		return "redirect:/volunteer/list";
 	}
 }
