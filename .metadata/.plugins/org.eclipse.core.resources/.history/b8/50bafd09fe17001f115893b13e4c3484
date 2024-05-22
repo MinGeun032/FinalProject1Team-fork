@@ -24,17 +24,17 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>No.</th>
+        	<th>No.</th>
           <th>제목</th>
           <th>날짜및시간</th>
           <th>모집인원</th>
           <th>보호소</th>
-          <th>게시한날짜</th>
+          <th>게시한날짜</th>          
         </tr>
       </thead>
       <tbody>
         <tr th:each="vol , i : ${volunteerList}">
-          <td th:text="${pager.num - i.index}"></td>
+        <td th:text="${pager.num - i.index}"></td>
           <td>
             <a th:href="@{/volunteer/detail(id=${vol.vol_event_post_idx})}" th:text="${vol.title}"></a>
           </td>
@@ -45,35 +45,6 @@
         </tr>
       </tbody>
     </table>
-
-    <div class="product__pagination">
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-
-          <li class="page-item" th:class="${pager.firstPage == 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.firstPage-1})}" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-
-          <li th:each="i : ${#numbers.sequence(pager.firstPage , pager.lastPage)}"
-            th:class="${pager.currentPage==i? 'page-item active':'page-item'}">
-            <a class="page-link" th:href="@{/volunteer/list(currentPage=${i})}" th:text="${i}"></a>
-          </li>
-
-          <li class="page-item" th:class="${pager.lastPage == pager.totalPage ? 'disabled' : ''}">
-            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.lastPage+1})}" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-
-
 
     <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
 

@@ -11,7 +11,7 @@
         VALUES (#{vol_date}, #{recruit_count}, #{shelter_name}, #{body_text}, #{title}, CURRENT_TIMESTAMP)
     </insert>
     
-    <select id="selectAll" parameterType="int" resultType="VolunteerNotice">
-		select * from volunteer_notice  limit #{startIndex} , #{rowCount}
+    <select id="selectAll" parameterType="java.util.Map" resultType="VolunteerNotice">
+		select * from volunteer_notice
 	</select>	
 </mapper>

@@ -50,8 +50,8 @@
       <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
 
-          <li class="page-item" th:class="${pager.firstPage == 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.firstPage-1})}" aria-label="Previous">
+          <li class="page-item">
+            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=pager.firstPage-1)}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
@@ -62,7 +62,7 @@
             <a class="page-link" th:href="@{/volunteer/list(currentPage=${i})}" th:text="${i}"></a>
           </li>
 
-          <li class="page-item" th:class="${pager.lastPage == pager.totalPage ? 'disabled' : ''}">
+          <li class="page-item">
             <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.lastPage+1})}" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>

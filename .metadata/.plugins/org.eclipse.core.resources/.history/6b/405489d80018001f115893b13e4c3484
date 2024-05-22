@@ -3,7 +3,7 @@
 
 <mapper namespace="com.sds.animalapp.model.volunteer.VolunteerDAO">
 	<select id="selectCount" parameterType="java.util.Map" resultType="int">
-		SELECT COUNT(*) FROM volunteer_notice
+		SELECT COUNT(*) FROM volunteer_notice;
 	</select>	
 	
     <insert id="insert" parameterType="VolunteerNotice">
@@ -11,7 +11,7 @@
         VALUES (#{vol_date}, #{recruit_count}, #{shelter_name}, #{body_text}, #{title}, CURRENT_TIMESTAMP)
     </insert>
     
-    <select id="selectAll" parameterType="int" resultType="VolunteerNotice">
-		select * from volunteer_notice  limit #{startIndex} , #{rowCount}
+    <select id="selectAll" parameterType="java.util.Map" resultType="VolunteerNotice">
+		select * from volunteer_notice
 	</select>	
 </mapper>
