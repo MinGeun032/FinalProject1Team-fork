@@ -1,0 +1,8 @@
+package com.sds.movieapp.model.recomend;
+
+import com.sds.movieapp.sns.SentimentDic;
+
+public class SentimentDicDAO {
+	public SentimentDic select(String word);
+}
+}

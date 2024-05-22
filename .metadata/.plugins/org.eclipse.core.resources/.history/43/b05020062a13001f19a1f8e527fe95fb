@@ -1,0 +1,11 @@
+package com.sds.configserver;
+
+import org.springframework.context.annotation.Bean;
+
+public class SecurityConfig {
+	
+	@Bean
+	public SecurityFilterChain fiterChain(HttpSecurity httpSecurity) throws Exception{
+		httpSecurity.
+	}
+}

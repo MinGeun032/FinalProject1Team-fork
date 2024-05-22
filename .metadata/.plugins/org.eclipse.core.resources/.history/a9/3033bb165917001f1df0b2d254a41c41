@@ -1,0 +1,15 @@
+package com.sds.animalapp.model.volunteer;
+
+import java.util.List;
+import java.util.Map;
+
+import com.sds.animalapp.domain.VolEventPost;
+
+public interface VolunteerDAO {
+	public int selectCount(); //게시물 수 
+	public List selectAll(Map map);//모든 게시물 가져오기
+	public VolEventPost select(VolEventPost volunteer);
+	public void insert(VolEventPost volunteer);
+	public void update(VolEventPost volunteer);
+	public void delete(VolEventPost volunteer);	
+}

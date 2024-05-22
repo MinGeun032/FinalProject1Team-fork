@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sds.animalapp.model.volunteer.VolunteerDAO">
+    <insert id="insert" parameterType="VolEventPost">
+        INSERT INTO vol_event_post (vol_date, recruit_count, shelter_name, body_text, title, regdate)
+        VALUES (#{volData}, #{recruitCount}, #{shelterName}, #{bodyText}, #{title}, CURRENT_TIMESTAMP)
+    </insert>
+</mapper>

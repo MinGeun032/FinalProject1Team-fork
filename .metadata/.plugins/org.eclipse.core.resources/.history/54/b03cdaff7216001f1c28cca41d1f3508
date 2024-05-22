@@ -1,0 +1,5 @@
+package com.sds.animalapp.controller;
+
+public class MainController {
+
+}

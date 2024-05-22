@@ -1,0 +1,8 @@
+spring.application.name=ConfigSever
+
+
+server.port=9000
+cloud.config.server.git.uri=git@github.com:hg316/msa-config.git
+
+#ssh-setting 을 낙타 기법으로
+spring.cloud.config.server.git.ignore-local-ssh-settings=true
