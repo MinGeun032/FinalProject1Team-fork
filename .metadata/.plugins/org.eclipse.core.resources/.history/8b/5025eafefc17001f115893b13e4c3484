@@ -16,7 +16,8 @@ public class VolunteerServiceImpl implements VolunteerService {
 
 	//게시물 수 카운트
 	public int selectCount() {
-		return volunteerDAO.selectCount();
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	//봉사List모두 가져오기

@@ -1,5 +1,7 @@
 package com.sds.animalapp.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,20 +26,17 @@ public class VolunteerController {
 	private Pager pager;
 	
     @GetMapping("/volunteer/list")
-    public String volunteerList(Model model, @RequestParam(value="currentPage", defaultValue="1") int currentPage) {
+    public String volunteerList(Model mode, @RequestParam(value="currentPage", defaultValue="1") int currentPage) {
     	
     	pager.init(volunteerService.selectCount(), currentPage);
     	
     	HashMap map=new HashMap();
-    	map.put("startIndex", pager.getStartIndex());
-		map.put("rowCount", pager.getPageSize());
-		
+    	
     	// 봉사 목록 가져오기
     	List volunteerList = volunteerService.selectAll(map);
     	
     	// 모델에 데이터 추가
 		model.addAttribute("volunteerList", volunteerList);
-		model.addAttribute("pager", pager);
 		
 		// 뷰 반환
         return "volunteer/list";

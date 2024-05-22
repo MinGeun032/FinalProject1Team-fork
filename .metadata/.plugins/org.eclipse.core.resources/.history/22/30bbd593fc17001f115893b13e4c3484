@@ -34,7 +34,7 @@
       </thead>
       <tbody>
         <tr th:each="vol , i : ${volunteerList}">
-        <td th:text="${pager.num - i.index}"></td>
+        <td th:text="${pager.vol - i.index}"></td>
           <td>
             <a th:href="@{/volunteer/detail(id=${vol.vol_event_post_idx})}" th:text="${vol.title}"></a>
           </td>

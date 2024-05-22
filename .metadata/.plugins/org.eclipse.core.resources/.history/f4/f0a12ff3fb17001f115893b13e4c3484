@@ -8,9 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sds.animalapp.common.Pager;
 import com.sds.animalapp.domain.VolunteerNotice;
 import com.sds.animalapp.model.volunteer.VolunteerService;
 
@@ -20,24 +18,15 @@ public class VolunteerController {
 	@Autowired
 	VolunteerService volunteerService;
 	
-	@Autowired
-	private Pager pager;
-	
     @GetMapping("/volunteer/list")
-    public String volunteerList(Model model, @RequestParam(value="currentPage", defaultValue="1") int currentPage) {
-    	
-    	pager.init(volunteerService.selectCount(), currentPage);
-    	
+    public String volunteerList(Model model) {
     	HashMap map=new HashMap();
-    	map.put("startIndex", pager.getStartIndex());
-		map.put("rowCount", pager.getPageSize());
-		
+    	
     	// 봉사 목록 가져오기
     	List volunteerList = volunteerService.selectAll(map);
     	
     	// 모델에 데이터 추가
 		model.addAttribute("volunteerList", volunteerList);
-		model.addAttribute("pager", pager);
 		
 		// 뷰 반환
         return "volunteer/list";
