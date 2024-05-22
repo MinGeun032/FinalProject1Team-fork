@@ -23,10 +23,10 @@ public class VolunteerController {
     	HashMap map=new HashMap();
     	
     	// 봉사 목록 가져오기
-    	List volunteerList = volunteerService.selectAll(map);
+    	List noticeList = volunteerService.selectAll(map);
     	
     	// 모델에 데이터 추가
-		model.addAttribute("volunteerList", volunteerList);
+		model.addAttribute("noticeList", noticeList);
 		
 		// 뷰 반환
         return "volunteer/list";

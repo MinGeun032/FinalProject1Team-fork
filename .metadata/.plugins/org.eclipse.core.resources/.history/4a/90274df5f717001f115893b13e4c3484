@@ -20,10 +20,10 @@ public class VolunteerServiceImpl implements VolunteerService {
 		return 0;
 	}
 
-	//봉사List모두 가져오기
+	@Override
 	public List selectAll(Map map) {
-		
-		return volunteerDAO.selectAll(map);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

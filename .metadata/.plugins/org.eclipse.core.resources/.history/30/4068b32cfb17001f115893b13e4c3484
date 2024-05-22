@@ -39,7 +39,6 @@
           <td th:text="${vol.vol_date}"></td>
           <td th:text="${vol.recruit_count}"></td>
           <td th:text="${vol.shelter_name}"></td>
-          <td th:text="${vol.regdate}"></td>
         </tr>
       </tbody>
     </table>

@@ -28,18 +28,16 @@
           <th>날짜및시간</th>
           <th>모집인원</th>
           <th>보호소</th>
-          <th>게시한날짜</th>          
         </tr>
       </thead>
       <tbody>
         <tr th:each="vol , i : ${volunteerList}">
           <td>
-            <a th:href="@{/volunteer/detail(id=${vol.vol_event_post_idx})}" th:text="${vol.title}"></a>
+            <a th:href="@{/cs/notice/detail(id=${vol.vol_event_post_idx})}" th:text="${vol.title}"></a>
           </td>
-          <td th:text="${vol.vol_date}"></td>
-          <td th:text="${vol.recruit_count}"></td>
-          <td th:text="${vol.shelter_name}"></td>
-          <td th:text="${vol.regdate}"></td>
+          <td th:text="${vol.volData}"></td>
+          <td th:text="${vol.recruitCount}"></td>
+          <td th:text="${vol.shelterName}"></td>
         </tr>
       </tbody>
     </table>

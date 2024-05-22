@@ -4,10 +4,6 @@
 <mapper namespace="com.sds.animalapp.model.volunteer.VolunteerDAO">
     <insert id="insert" parameterType="VolunteerNotice">
         INSERT INTO volunteer_notice (vol_date, recruit_count, shelter_name, body_text, title, regdate)
-        VALUES (#{vol_date}, #{recruit_count}, #{shelter_name}, #{body_text}, #{title}, CURRENT_TIMESTAMP)
+        VALUES (#{volData}, #{recruitCount}, #{shelterName}, #{bodyText}, #{title}, CURRENT_TIMESTAMP)
     </insert>
-    
-    <select id="selectAll" parameterType="java.util.Map" resultType="VolunteerNotice">
-		select * from volunteer_notice
-	</select>	
 </mapper>

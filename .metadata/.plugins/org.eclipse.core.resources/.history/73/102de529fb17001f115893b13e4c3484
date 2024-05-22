@@ -28,7 +28,6 @@
           <th>날짜및시간</th>
           <th>모집인원</th>
           <th>보호소</th>
-          <th>게시한날짜</th>          
         </tr>
       </thead>
       <tbody>
@@ -39,7 +38,6 @@
           <td th:text="${vol.vol_date}"></td>
           <td th:text="${vol.recruit_count}"></td>
           <td th:text="${vol.shelter_name}"></td>
-          <td th:text="${vol.regdate}"></td>
         </tr>
       </tbody>
     </table>
