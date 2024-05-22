@@ -3,3 +3,12 @@
 1716190469310	Move file
 1716190552995	Move file
 1716190559116	Move file
+1716277488192	Rename package 'com.sds.animalapp.model'
+1716277529646	Rename type 'VolunteerService'
+1716279458169	Copy compilation unit
+1716281058011	Delete element
+1716284197500	Delete element
+1716284528868	Rename type 'Volunteer'
+1716285714349	Rename resource 'VolunteerMapper.xml'
+1716287558371	Rename type 'VolEventPost'
+1716287606161	Rename resource 'VolEventPostMapper.xml'

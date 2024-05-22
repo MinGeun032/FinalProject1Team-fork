@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="log.debug"/>
+		<item key="selection" value="container"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="System.out.println"/>
-			<item value="sns.naver"/>
-			<item value="    "/>
-			<item value="href=&quot;img/"/>
-			<item value="href=&quot;/sitecss/"/>
-			<item value="href=&quot;css/"/>
-			<item value="this.tag"/>
-			<item value="tag"/>
-			<item value="form3"/>
-			<item value="form1"/>
-			<item value="&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot; id=&quot;bt_regist&quot;&gt;등록&lt;/button&gt;"/>
+			<item value="container"/>
+			<item value="logo"/>
+			<item value="header"/>
+			<item value="&lt;script src=&quot;js/jquery-1.11.0.min.js&quot;&gt;&lt;/scrip"/>
+			<item value="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/vendor.css&quot;&gt;"/>
+			<item value=" &lt;img src=&quot;/site//site/images/logo.png&quot; a"/>
+			<item value="&quot;images/"/>
+			<item value="images/"/>
+			<item value="/site/images/"/>
+			<item value="&lt;img src=&quot;/site/images/logo.png&quot; alt=&quot;logo&quot; class=&quot;img-fluid&quot;&gt;"/>
+			<item value="img-fluid"/>
+			<item value="image"/>
+			<item value="/images/"/>
+			<item value="images"/>
+			<item value="sign in"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&quot;/site/images/"/>
+			<item value="/site/images/"/>
 			<item value="log.debug"/>
 			<item value="sns.kakao"/>
 			<item value="href=&quot;/site/css/"/>
@@ -29,10 +35,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="807"/>
-		<item key="DIALOG_Y_ORIGIN" value="264"/>
+		<item key="DIALOG_X_ORIGIN" value="1446"/>
+		<item key="DIALOG_Y_ORIGIN" value="312"/>
 		<item key="DIALOG_WIDTH" value="322"/>
-		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_HEIGHT" value="368"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

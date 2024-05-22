@@ -1,0 +1,5 @@
+package com.sds.animalapp.domain;
+
+public class Volunteer {
+
+}
