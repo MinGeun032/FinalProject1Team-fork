@@ -19,20 +19,11 @@
   <!-- Header End -->
 
   <div class="container">
-
-
+    
+    
     <h2>봉사활동 모집 게시판</h2>
-    <div class="form1">
-	     <div class="form-group row">
-	     	<div class="col-sm-11">
-          		<input type="text" class="form-control" id="search" name="search" placeholder="검색어를 입력하세요">
-        	</div>
-        	<div class="col-sm-1">
-        		<button class="btn btn-outline-secondary" type="button">검색</button>
-      		</div>
-	     </div>
-    </div>
-
+    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    
     <table class="table table-striped">
       <thead>
         <tr>
@@ -63,8 +54,7 @@
         <ul class="pagination justify-content-center">
 
           <li class="page-item" th:class="${pager.firstPage == 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.firstPage-1})}"
-              aria-label="Previous">
+            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.firstPage-1})}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
@@ -76,8 +66,7 @@
           </li>
 
           <li class="page-item" th:class="${pager.lastPage == pager.totalPage ? 'disabled' : ''}">
-            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.lastPage+1})}"
-              aria-label="Next">
+            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.lastPage+1})}" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -85,13 +74,13 @@
 
         </ul>
       </nav>
-
+    
     </div>
 
 
-    <div class="card-footer">
-      <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
-    </div>
+	<div class="card-footer">
+    <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
+	</div>
   </div>
 </body>
 <script type="text/javascript">
