@@ -19,41 +19,79 @@
   <!-- Header End -->
 
   <div class="container">
-    <h2>Striped Rows</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
+
+
+    <h2>봉사활동 모집 게시판</h2>
+    <div class="form1">
+	     <div class="form-group row">
+	     	<div class="col-sm-11">
+          		<input type="text" class="form-control" id="search" name="search" placeholder="제목 혹은 보호소명으로 검색해 주세요.">
+        	</div>
+        	<div class="col-sm-1">
+        		<button class="btn btn-outline-secondary" type="button" id="bt_search">검색</button>
+      		</div>
+	     </div>
+    </div>
+
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>No.</th>
           <th>제목</th>
           <th>날짜및시간</th>
           <th>모집인원</th>
           <th>보호소</th>
+          <th>게시한날짜</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
-        </tr>
-        <tr>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
-        </tr>
-        <tr>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
-          <td>???</td>
+        <tr th:each="vol , i : ${volunteerList}">
+          <td th:text="${pager.num - i.index}"></td>
+          <td>
+            <a th:href="@{/volunteer/detail(id=${vol.vol_event_post_idx})}" th:text="${vol.title}"></a>
+          </td>
+          <td th:text="${vol.vol_date}"></td>
+          <td th:text="${vol.recruit_count}"></td>
+          <td th:text="${vol.shelter_name}"></td>
+          <td th:text="${vol.regdate}"></td>
         </tr>
       </tbody>
     </table>
 
-    <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
+    <div class="product__pagination">
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
 
+          <li class="page-item" th:class="${pager.firstPage == 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.firstPage-1})}"
+              aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+
+          <li th:each="i : ${#numbers.sequence(pager.firstPage , pager.lastPage)}"
+            th:class="${pager.currentPage==i? 'page-item active':'page-item'}">
+            <a class="page-link" th:href="@{/volunteer/list(currentPage=${i})}" th:text="${i}"></a>
+          </li>
+
+          <li class="page-item" th:class="${pager.lastPage == pager.totalPage ? 'disabled' : ''}">
+            <a class="page-link" href="#" th:href="@{/volunteer/list(currentPage=${pager.lastPage+1})}"
+              aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+
+    <div class="card-footer">
+      <button type="button" class="btn btn-secondary col-12" id="bt_regist">등록</button>
+    </div>
   </div>
 </body>
 <script type="text/javascript">
@@ -63,6 +101,28 @@
       location.href = "/volunteer/writeform";
     });
   });
+  $(function () {
+	    $("#bt_search").click(function () {
+	    	var searchKeyword = $("#search").val();
+	        
+	        // URL에 검색어 파라미터 추가하여 이동
+	        location.href = "/volunteer/searchform?keyword=" + encodeURIComponent(searchKeyword);
+	    });
+	});
+  $(function () {
+	    $("#search").keypress(function (e) {
+	        // 눌러진 키의 이름 가져오기
+	        var keyName = e.key;
+
+	        // 눌러진 키가 'Enter'인지 확인
+	        if (keyName === 'Enter') {
+	            // 검색 버튼 클릭
+	            $("#bt_search").click();
+	        }
+	    });
+	});
+
+
 </script>
 
 </html>

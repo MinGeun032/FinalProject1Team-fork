@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sds.animalapp.model.volunteer.VolunteerDAO">
+	<select id="selectCount" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM volunteer_notice
+	</select>	
+	
+		<select id="selectTitleCount" parameterType="java.util.Map" resultType="int">
+    	SELECT COUNT(*) FROM volunteer_notice
+    	<where>
+        	<if test="searchKeyword != null and searchKeyword != ''">
+            	AND title LIKE CONCAT('%', #{searchKeyword}, '%')
+        	</if>
+    	</where>
+	</select>
+	
+    <insert id="insert" parameterType="VolunteerNotice">
+        INSERT INTO volunteer_notice (vol_date, recruit_count, shelter_name, body_text, title, regdate)
+        VALUES (#{vol_date}, #{recruit_count}, #{shelter_name}, #{body_text}, #{title}, CURRENT_TIMESTAMP)
+    </insert>
+    
+    <select id="selectAll" parameterType="int" resultType="VolunteerNotice">
+		select * from volunteer_notice  limit #{startIndex} , #{rowCount}
+	</select>	
+	
+    <select id="selectTitle" parameterType="int" resultType="VolunteerNotice">
+		select * from volunteer_notice  limit WHERE title LIKE '%검색어%';
+	</select>	
+</mapper>
