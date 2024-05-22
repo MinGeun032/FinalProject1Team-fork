@@ -48,6 +48,28 @@ public class VolunteerController {
     	return "volunteer/regist";
     }
     
+    //검색결과 가져오기
+    @GetMapping("/volunteer/searchform")
+    public String getSearchform(Model model, @RequestParam(value="currentPage", defaultValue="1") int currentPage, @RequestParam("keyword") String keyword) {
+
+    	pager.init(volunteerService.selectSearchCount(keyword), currentPage);
+    	
+    	HashMap map=new HashMap();
+    	map.put("startIndex", pager.getStartIndex());
+		map.put("rowCount", pager.getPageSize());
+		map.put("keyword", keyword);
+		
+    	// 봉사 목록 가져오기
+    	List volunteerList = volunteerService.selectSearch(map);
+    	
+    	// 모델에 데이터 추가
+		model.addAttribute("volunteerList", volunteerList);
+		model.addAttribute("pager", pager);
+		
+		// 뷰 반환
+        return "volunteer/list";
+    }
+    
     @PostMapping("/volunteer/regist")
 	public String regist(VolunteerNotice volunteer) {
     	volunteerService.insert(volunteer);

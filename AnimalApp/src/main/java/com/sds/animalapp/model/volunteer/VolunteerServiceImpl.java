@@ -19,12 +19,22 @@ public class VolunteerServiceImpl implements VolunteerService {
 		return volunteerDAO.selectCount();
 	}
 
+	//제목검색결과세기
+	public int selectSearchCount(String keyword) {
+		return volunteerDAO.selectSearchCount(keyword);
+	}
+	
 	//봉사List모두 가져오기
 	public List selectAll(Map map) {
 		
 		return volunteerDAO.selectAll(map);
 	}
 
+	//제목or보호소 검색으로 가져오기
+	public List selectSearch(Map map) {
+		return volunteerDAO.selectSearch(map);
+	}
+	
 	@Override
 	public VolunteerNotice select(VolunteerNotice volunteerNotice) {
 		// TODO Auto-generated method stub
@@ -47,5 +57,7 @@ public class VolunteerServiceImpl implements VolunteerService {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }

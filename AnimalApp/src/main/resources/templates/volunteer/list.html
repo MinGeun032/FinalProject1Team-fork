@@ -25,10 +25,10 @@
     <div class="form1">
 	     <div class="form-group row">
 	     	<div class="col-sm-11">
-          		<input type="text" class="form-control" id="search" name="search" placeholder="검색어를 입력하세요">
+          		<input type="text" class="form-control" id="search" name="search" placeholder="제목 혹은 보호소명으로 검색해 주세요.">
         	</div>
         	<div class="col-sm-1">
-        		<button class="btn btn-outline-secondary" type="button">검색</button>
+        		<button class="btn btn-outline-secondary" type="button" id="bt_search">검색</button>
       		</div>
 	     </div>
     </div>
@@ -101,6 +101,28 @@
       location.href = "/volunteer/writeform";
     });
   });
+  $(function () {
+	    $("#bt_search").click(function () {
+	    	var searchKeyword = $("#search").val();
+	        
+	        // URL에 검색어 파라미터 추가하여 이동
+	        location.href = "/volunteer/searchform?keyword=" + encodeURIComponent(searchKeyword);
+	    });
+	});
+  $(function () {
+	    $("#search").keypress(function (e) {
+	        // 눌러진 키의 이름 가져오기
+	        var keyName = e.key;
+
+	        // 눌러진 키가 'Enter'인지 확인
+	        if (keyName === 'Enter') {
+	            // 검색 버튼 클릭
+	            $("#bt_search").click();
+	        }
+	    });
+	});
+
+
 </script>
 
 </html>

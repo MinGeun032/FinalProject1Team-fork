@@ -1,0 +1,62 @@
+package com.sds.animalapp.model.volunteer;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sds.animalapp.domain.VolunteerNotice;
+
+@Service
+public class VolunteerServiceImpl implements VolunteerService {
+	
+	@Autowired
+	VolunteerDAO volunteerDAO;
+
+	//게시물 수 카운트
+	public int selectCount() {
+		return volunteerDAO.selectCount();
+	}
+
+	//제목검색결과세기
+	public int selectTitleCount(String keyword) {
+		return volunteerDAO.selectTitleCount(keyword);
+	}
+	
+	//봉사List모두 가져오기
+	public List selectAll(Map map) {
+		
+		return volunteerDAO.selectAll(map);
+	}
+
+	@Override
+	public VolunteerNotice select(VolunteerNotice volunteerNotice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//글 등록
+	public void insert(VolunteerNotice volunteerNotice) {
+		volunteerDAO.insert(volunteerNotice);
+	}
+
+	@Override
+	public void update(VolunteerNotice volunteerNotice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(VolunteerNotice volunteerNotice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//제목검색으로 가져오기
+	public List selectTitle(Map map, String keyword) {
+		return volunteerDAO.selectTitle(map, keyword;
+	}
+
+
+}

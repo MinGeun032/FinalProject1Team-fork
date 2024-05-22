@@ -6,6 +6,11 @@
 		SELECT COUNT(*) FROM volunteer_notice
 	</select>	
 	
+	<select id="selectSearchCount" parameterType="String" resultType="int">
+	    SELECT COUNT(*) FROM volunteer_notice
+	    WHERE title LIKE CONCAT('%', #{keyword}, '%') OR shelter_name LIKE CONCAT('%', #{keyword}, '%')
+	</select>
+	
     <insert id="insert" parameterType="VolunteerNotice">
         INSERT INTO volunteer_notice (vol_date, recruit_count, shelter_name, body_text, title, regdate)
         VALUES (#{vol_date}, #{recruit_count}, #{shelter_name}, #{body_text}, #{title}, CURRENT_TIMESTAMP)
@@ -14,4 +19,10 @@
     <select id="selectAll" parameterType="int" resultType="VolunteerNotice">
 		select * from volunteer_notice  limit #{startIndex} , #{rowCount}
 	</select>	
+	
+    <select id="selectSearch" parameterType="java.util.Map" resultType="com.sds.animalapp.domain.VolunteerNotice">
+	    SELECT * FROM volunteer_notice
+	    WHERE title LIKE CONCAT('%', #{keyword}, '%') OR shelter_name LIKE CONCAT('%', #{keyword}, '%')
+	    LIMIT #{startIndex}, #{rowCount}
+	</select>
 </mapper>
